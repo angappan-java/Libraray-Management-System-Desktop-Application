@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch4jConfig>
+  <dontWrapJar>false</dontWrapJar>
+  <headerType>gui</headerType>
+  <jar>D:\Angappan\LibraryManagementSystem\dist\LibraryManagementSystem.jar</jar>
+  <outfile>D:\Angappan\Swing File\LibraryManagementSystem\LibraryManagement.exe</outfile>
+  <errTitle></errTitle>
+  <cmdLine></cmdLine>
+  <chdir>.</chdir>
+  <priority>normal</priority>
+  <downloadUrl></downloadUrl>
+  <supportUrl></supportUrl>
+  <stayAlive>false</stayAlive>
+  <restartOnCrash>false</restartOnCrash>
+  <manifest></manifest>
+  <icon>D:\Angappan\LibraryManagementSystem\src\img\bookicon.ico</icon>
+  <classPath>
+    <mainClass>librarymanagementsystem.home</mainClass>
+    <cp>D:\Software\Java\Java Jar Files\jcalendar-1.4.jar</cp>
+    <cp>C:\Program Files\NetBeans-23\netbeans\java\modules\ext\AbsoluteLayout.jar</cp>
+    <cp>D:\Software\Java\Java Jar Files\mssql-jdbc-8.2.2.jre8.jar</cp>
+    <cp>D:\Software\Java\Java Jar Files\rs2xml.jar</cp>
+  </classPath>
+  <jre>
+    <path>%JAVA_HOME%;%PATH%</path>
+    <requiresJdk>false</requiresJdk>
+    <requires64Bit>false</requires64Bit>
+    <minVersion></minVersion>
+    <maxVersion></maxVersion>
+  </jre>
+</launch4jConfig>
