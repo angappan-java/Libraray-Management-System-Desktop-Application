@@ -45,7 +45,6 @@ public class signup_page extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         username = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        password = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         phonenumber = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
@@ -54,11 +53,15 @@ public class signup_page extends javax.swing.JFrame {
         reset = new javax.swing.JButton();
         signup = new javax.swing.JButton();
         close = new javax.swing.JButton();
+        show = new javax.swing.JCheckBox();
+        password = new javax.swing.JPasswordField();
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("SIGNUP");
+        setMaximumSize(new java.awt.Dimension(500, 500));
         setMinimumSize(new java.awt.Dimension(500, 500));
+        setPreferredSize(new java.awt.Dimension(500, 500));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 31)); // NOI18N
@@ -76,9 +79,6 @@ public class signup_page extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel3.setText("Password");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 140, 33));
-
-        password.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        getContentPane().add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, 270, 33));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel4.setText("PhoneNumber");
@@ -133,7 +133,19 @@ public class signup_page extends javax.swing.JFrame {
                 closeActionPerformed(evt);
             }
         });
-        getContentPane().add(close, new org.netbeans.lib.awtextra.AbsoluteConstraints(422, 417, -1, -1));
+        getContentPane().add(close, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 420, -1, -1));
+
+        show.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        show.setText("SHOW");
+        show.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                showActionPerformed(evt);
+            }
+        });
+        getContentPane().add(show, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, 101, -1));
+
+        password.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        getContentPane().add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(188, 180, 272, 39));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/bg2.jpg"))); // NOI18N
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 500));
@@ -198,6 +210,15 @@ public class signup_page extends javax.swing.JFrame {
         new login().setVisible(true);
     }//GEN-LAST:event_loginActionPerformed
 
+    private void showActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showActionPerformed
+        // TODO add your handling code here:
+        if(show.isSelected()){
+           password.setEchoChar((char)0);
+        }else{
+           password.setEchoChar('*');
+        }
+    }//GEN-LAST:event_showActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -243,9 +264,10 @@ public class signup_page extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JButton login;
-    private javax.swing.JTextField password;
+    private javax.swing.JPasswordField password;
     private javax.swing.JTextField phonenumber;
     private javax.swing.JButton reset;
+    private javax.swing.JCheckBox show;
     private javax.swing.JButton signup;
     private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables
