@@ -102,7 +102,7 @@ public class login extends javax.swing.JFrame {
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(177, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 549));
@@ -158,7 +158,7 @@ public class login extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 0));
         jLabel7.setText("DON'T  YOU HAVE AN ACCOUNT  ?");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(303, 429, 310, 39));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(303, 429, 330, 39));
 
         register.setBackground(new java.awt.Color(51, 0, 51));
         register.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -169,12 +169,12 @@ public class login extends javax.swing.JFrame {
                 registerActionPerformed(evt);
             }
         });
-        getContentPane().add(register, new org.netbeans.lib.awtextra.AbsoluteConstraints(621, 429, 140, 39));
+        getContentPane().add(register, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 430, 140, 39));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 0));
         jLabel8.setText("FORGET PASSWORD ?");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(403, 486, 210, 37));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(403, 486, 230, 37));
 
         clickhere.setBackground(new java.awt.Color(102, 255, 204));
         clickhere.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -185,7 +185,7 @@ public class login extends javax.swing.JFrame {
                 clickhereActionPerformed(evt);
             }
         });
-        getContentPane().add(clickhere, new org.netbeans.lib.awtextra.AbsoluteConstraints(621, 486, -1, 37));
+        getContentPane().add(clickhere, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 480, -1, 37));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 204, 0));
@@ -207,15 +207,17 @@ public class login extends javax.swing.JFrame {
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
         // TODO add your handling code here:
           String Name=username.getText();
+          String email=username.getText();
         String Pass=password.getText();
        
 if(!Name.isEmpty() && !Pass.isEmpty()){
 try{
              Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             Connection con=DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=librarymanagement;trustServerCertificate=true;user=librarymanage;password=libr");
-             PreparedStatement st=con.prepareStatement("select username,password from admin where username=? and password=?");
+             PreparedStatement st=con.prepareStatement("select * from admin where (username=? or email= ?) and password=?");
              st.setString(1,Name);
-             st.setString(2,Pass);
+             st.setString(2,email);
+             st.setString(3,Pass);
            ResultSet rs=st.executeQuery();
            if(rs.next()){
                                JOptionPane.showMessageDialog(this,"LOGIN SUCCESS....");
